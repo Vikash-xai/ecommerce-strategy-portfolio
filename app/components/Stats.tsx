@@ -7,12 +7,12 @@ export default function Stats() {
         {stats.map((stat) => (
           <div
             key={stat.label}
-            className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-center backdrop-blur-xl"
+            className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 text-center backdrop-blur-xl"
           >
-            <div className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-orange-300 bg-clip-text text-3xl font-semibold text-transparent">
+            <div className="text-3xl font-semibold text-lime-300">
               {stat.value}
             </div>
-            <div className="mt-1 text-xs text-zinc-400">{stat.label}</div>
+            <div className="mt-1 text-xs text-slate-400">{stat.label}</div>
           </div>
         ))}
       </div>

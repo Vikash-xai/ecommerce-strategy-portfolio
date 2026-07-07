@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import BackgroundFX from "./components/BackgroundFX";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -22,7 +25,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} h-full`}>
       <body className="min-h-full overflow-x-hidden bg-background font-sans text-foreground antialiased">
-        {children}
+        <div className="relative flex min-h-screen flex-col">
+          <BackgroundFX />
+          <Navbar />
+          <div className="flex-1">{children}</div>
+          <Footer />
+        </div>
       </body>
     </html>
   );

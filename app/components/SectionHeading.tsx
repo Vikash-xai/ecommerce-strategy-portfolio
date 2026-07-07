@@ -9,14 +9,14 @@ export default function SectionHeading({
 }) {
   return (
     <div className="mb-10">
-      <span className="text-xs font-semibold uppercase tracking-widest text-fuchsia-300/80">
+      <span className="text-xs font-semibold uppercase tracking-widest text-lime-400">
         {eyebrow}
       </span>
       <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
         {title}
       </h2>
       {description ? (
-        <p className="mt-3 max-w-2xl text-base leading-7 text-zinc-400">
+        <p className="mt-3 max-w-2xl text-base leading-7 text-slate-400">
           {description}
         </p>
       ) : null}

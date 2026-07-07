@@ -14,16 +14,16 @@ export default function About() {
         {skillGroups.map((group) => (
           <div
             key={group.label}
-            className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition-colors hover:border-white/20"
+            className="rounded-2xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur-xl transition-colors hover:border-lime-400/30"
           >
-            <h3 className="text-sm font-semibold text-zinc-200">
+            <h3 className="text-sm font-semibold text-white">
               {group.label}
             </h3>
             <div className="mt-4 flex flex-wrap gap-2">
               {group.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-zinc-300"
+                  className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-xs text-slate-300"
                 >
                   {skill}
                 </span>

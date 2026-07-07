@@ -15,15 +15,15 @@ export default function Projects() {
         {projects.map((project) => (
           <div
             key={project.title}
-            className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition-colors hover:border-white/20"
+            className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur-xl transition-colors hover:border-lime-400/30"
           >
             <h3 className="text-base font-semibold text-white">
               {project.title}
             </h3>
-            <p className="flex-1 text-sm leading-6 text-zinc-400">
+            <p className="flex-1 text-sm leading-6 text-slate-400">
               {project.description}
             </p>
-            <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-fuchsia-300">
+            <div className="flex items-center gap-2 rounded-full border border-lime-400/20 bg-lime-400/10 px-3 py-1.5 text-xs font-medium text-lime-300">
               <Sparkles className="h-3.5 w-3.5" />
               {project.highlight}
             </div>

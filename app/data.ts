@@ -106,6 +106,13 @@ export const projects = [
       "Analyzed 40K+ Namshi SKUs for listing accuracy on Noon and identified a quantity threshold for triggering visibility.",
     highlight: "Online style % improved from 50% to 75%",
   },
+  {
+    title: "Flipkart Revenue Analysis (Google Apps Script)",
+    description:
+      "Built a Google Apps Script that turns a raw Flipkart order export into an automated revenue report inside Google Sheets — category breakdown, month-over-month trend chart, and top products.",
+    highlight: "One-click revenue report + trend chart",
+    link: "https://github.com/Vikash-xai/ecommerce-strategy-portfolio/tree/master/scripts/flipkart-revenue-analysis",
+  },
 ];
 
 export const education = [

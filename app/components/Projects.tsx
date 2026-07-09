@@ -1,4 +1,4 @@
-import { Sparkles } from "lucide-react";
+import { ExternalLink, Sparkles } from "lucide-react";
 import { projects } from "../data";
 import SectionHeading from "./SectionHeading";
 
@@ -11,7 +11,7 @@ export default function Projects() {
         description="Initiatives that combined data, strategy, and cross-functional execution to move the needle."
       />
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2">
         {projects.map((project) => (
           <div
             key={project.title}
@@ -23,9 +23,22 @@ export default function Projects() {
             <p className="flex-1 text-sm leading-6 text-slate-400">
               {project.description}
             </p>
-            <div className="flex items-center gap-2 rounded-full border border-lime-400/20 bg-lime-400/10 px-3 py-1.5 text-xs font-medium text-lime-300">
-              <Sparkles className="h-3.5 w-3.5" />
-              {project.highlight}
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="flex items-center gap-2 rounded-full border border-lime-400/20 bg-lime-400/10 px-3 py-1.5 text-xs font-medium text-lime-300">
+                <Sparkles className="h-3.5 w-3.5" />
+                {project.highlight}
+              </div>
+              {project.link ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 text-xs font-medium text-slate-300 transition-colors hover:border-white/25 hover:text-white"
+                >
+                  <ExternalLink className="h-3.5 w-3.5" />
+                  View code
+                </a>
+              ) : null}
             </div>
           </div>
         ))}

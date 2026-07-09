@@ -9,6 +9,7 @@ const links = [
   { href: "/pictures", label: "Pictures" },
   { href: "/articles", label: "Articles" },
   { href: "/contents", label: "Contents" },
+  { href: "/visualizer", label: "Visualizer" },
 ];
 
 export default function Navbar() {
@@ -24,7 +25,7 @@ export default function Navbar() {
           <span className="text-sm font-medium text-white">Vikash Kumar</span>
         </Link>
 
-        <nav className="hidden items-center gap-8 text-sm sm:flex">
+        <nav className="hidden items-center gap-6 text-sm md:flex">
           {links.map((link) => {
             const isActive =
               link.href === "/"

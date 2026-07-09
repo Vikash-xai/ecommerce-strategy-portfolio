@@ -1,4 +1,4 @@
-import { ArrowRight, FileText, Image as ImageIcon, Newspaper } from "lucide-react";
+import { ArrowRight, FileText, Image as ImageIcon, Newspaper, Paintbrush } from "lucide-react";
 import Link from "next/link";
 import SectionHeading from "./SectionHeading";
 
@@ -21,6 +21,12 @@ const tiles = [
     title: "Articles",
     description: "Writing on retail analytics and e-commerce strategy.",
   },
+  {
+    href: "/visualizer",
+    icon: Paintbrush,
+    title: "Visualizer",
+    description: "Preview Asian Paints shades on your own room photos.",
+  },
 ];
 
 export default function ExploreTiles() {
@@ -28,7 +34,7 @@ export default function ExploreTiles() {
     <section className="mx-auto max-w-5xl px-6 py-16">
       <SectionHeading eyebrow="Explore" title="More to see" />
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2">
         {tiles.map((tile) => (
           <Link
             key={tile.href}

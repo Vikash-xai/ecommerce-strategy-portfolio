@@ -10,13 +10,14 @@ const links = [
   { href: "/articles", label: "Articles" },
   { href: "/contents", label: "Contents" },
   { href: "/visualizer", label: "Visualizer" },
+  { href: "/biodata", label: "Biodata" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#060d1f]/70 backdrop-blur-xl">
+    <header className="print:hidden sticky top-0 z-50 border-b border-white/10 bg-[#060d1f]/70 backdrop-blur-xl">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-lime-400 text-sm font-semibold text-[#060d1f]">
@@ -25,7 +26,7 @@ export default function Navbar() {
           <span className="text-sm font-medium text-white">Vikash Kumar</span>
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm md:flex">
+        <nav className="hidden items-center gap-5 text-sm lg:flex">
           {links.map((link) => {
             const isActive =
               link.href === "/"

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { User } from "lucide-react";
+import { Pencil, User } from "lucide-react";
+import Link from "next/link";
 import type { ReactNode } from "react";
+import { ADMIN_EMAIL, auth } from "@/auth";
 import { education, profile } from "../data";
 import SectionHeading from "../components/SectionHeading";
 import PrintButton from "./PrintButton";
@@ -72,7 +74,10 @@ function FieldRow({ label, value }: Field) {
   );
 }
 
-export default function BiodataPage() {
+export default async function BiodataPage() {
+  const session = await auth();
+  const isAuthorized = session?.user?.email === ADMIN_EMAIL;
+
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
       <div className="print:hidden">
@@ -82,8 +87,17 @@ export default function BiodataPage() {
           description="A traditional-format biodata. Fields marked “— add …” are still to be filled in — send over the details and they'll be added here."
         />
 
-        <div className="mb-8 flex justify-center">
+        <div className="mb-8 flex items-center justify-center gap-3">
           <PrintButton />
+          {isAuthorized ? (
+            <Link
+              href="/admin/biodata"
+              className="flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-white/30 hover:text-white"
+            >
+              <Pencil className="h-4 w-4" />
+              Edit
+            </Link>
+          ) : null}
         </div>
       </div>
 

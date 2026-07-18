@@ -89,15 +89,13 @@ export default async function BiodataPage() {
 
         <div className="mb-8 flex items-center justify-center gap-3">
           <PrintButton />
-          {isAuthorized ? (
-            <Link
-              href="/admin/biodata"
-              className="flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-white/30 hover:text-white"
-            >
-              <Pencil className="h-4 w-4" />
-              Edit
-            </Link>
-          ) : null}
+          <Link
+            href="/admin/biodata"
+            className="flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-white/30 hover:text-white"
+          >
+            <Pencil className="h-4 w-4" />
+            {isAuthorized ? "Edit" : "Admin"}
+          </Link>
         </div>
       </div>
 

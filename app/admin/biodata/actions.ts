@@ -1,6 +1,7 @@
 "use server";
 
-import { ADMIN_EMAIL, auth } from "@/auth";
+import { AuthError } from "next-auth";
+import { ADMIN_EMAIL, auth, signIn } from "@/auth";
 import {
   astrologicalDetails as currentAstrologicalDetails,
   familyDetails as currentFamilyDetails,
@@ -15,6 +16,26 @@ const BRANCH = "master";
 const FILE_PATH = "app/biodata/biodataData.ts";
 
 export type SaveResult = { ok: true } | { ok: false; error: string };
+export type LoginResult = { ok: true } | { ok: false; error: string };
+
+export async function login(
+  _prevState: LoginResult | null,
+  formData: FormData
+): Promise<LoginResult> {
+  const password = formData.get("password");
+  try {
+    await signIn("credentials", {
+      password: typeof password === "string" ? password : "",
+      redirectTo: "/admin/biodata",
+    });
+    return { ok: true };
+  } catch (error) {
+    if (error instanceof AuthError) {
+      return { ok: false, error: "Incorrect password." };
+    }
+    throw error;
+  }
+}
 
 function fieldsFromForm(formData: FormData, prefix: string, schema: Field[]): Field[] {
   return schema.map((f) => {

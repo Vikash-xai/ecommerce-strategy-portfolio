@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ADMIN_EMAIL, auth, signIn, signOut } from "@/auth";
+import { ADMIN_EMAIL, auth, signOut } from "@/auth";
 import {
   aboutMe,
   astrologicalDetails,
@@ -8,6 +8,7 @@ import {
   professionalDetails,
 } from "../../biodata/biodataData";
 import EditBiodataForm from "./EditBiodataForm";
+import LoginForm from "./LoginForm";
 
 export const metadata: Metadata = {
   title: "Edit Biodata | Admin",
@@ -22,21 +23,9 @@ export default async function AdminBiodataPage() {
       <div className="mx-auto flex max-w-md flex-col items-center gap-4 px-6 py-24 text-center">
         <h1 className="text-2xl font-semibold text-white">Sign in required</h1>
         <p className="text-sm text-slate-400">
-          Sign in with the account authorized to edit this site.
+          Enter the password to edit this site.
         </p>
-        <form
-          action={async () => {
-            "use server";
-            await signIn("google", { redirectTo: "/admin/biodata" });
-          }}
-        >
-          <button
-            type="submit"
-            className="rounded-full bg-lime-400 px-5 py-2.5 text-sm font-semibold text-[#060d1f]"
-          >
-            Sign in with Google
-          </button>
-        </form>
+        <LoginForm />
       </div>
     );
   }

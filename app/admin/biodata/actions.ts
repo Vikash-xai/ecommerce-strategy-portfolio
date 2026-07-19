@@ -123,6 +123,8 @@ export async function saveBiodata(
       cache: "no-store",
     });
     if (!currentRes.ok) {
+      const errText = await currentRes.text();
+      console.error("saveBiodata: read failed", currentRes.status, errText);
       return { ok: false, error: `Could not read current file (${currentRes.status}).` };
     }
     const current = (await currentRes.json()) as { sha: string };
@@ -140,11 +142,13 @@ export async function saveBiodata(
 
     if (!putRes.ok) {
       const errText = await putRes.text();
+      console.error("saveBiodata: write failed", putRes.status, errText);
       return { ok: false, error: `GitHub commit failed (${putRes.status}): ${errText}` };
     }
 
     return { ok: true };
   } catch (err) {
+    console.error("saveBiodata: threw", err);
     return { ok: false, error: err instanceof Error ? err.message : "Unknown error" };
   }
 }

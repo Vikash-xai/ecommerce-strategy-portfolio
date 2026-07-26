@@ -1,0 +1,9 @@
+[
+  {
+    "slug": "e2e-test-article",
+    "title": "E2E Test Article",
+    "date": "2026-07-26",
+    "excerpt": "A test excerpt.",
+    "body": "First paragraph.\n\nSecond paragraph."
+  }
+]

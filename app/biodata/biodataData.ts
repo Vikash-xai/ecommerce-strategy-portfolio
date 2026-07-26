@@ -8,7 +8,7 @@ export const personalDetails: Field[] = [
   { label: "Height", value: "5'11''" },
   { label: "Complexion", value: "White" },
   { label: "Blood Group", value: "A(+ve)" },
-  { label: "Marital Status", value: "SIngle" },
+  { label: "Marital Status", value: "Single" },
   { label: "Religion", value: "Hindu" },
   { label: "Caste / Community", value: "Kushwaha" },
   { label: "Gotra", value: null },
@@ -34,7 +34,7 @@ export const astrologicalDetails: Field[] = [
 ];
 
 export const professionalDetails: Field[] = [
-  { label: "Current Role", value: "Strategy Analyst, Namshi (E-Commerce), Dubai" },
+  { label: "Current Role", value: "Business Analyst, Namshi (E-Commerce), Dubai" },
   { label: "Annual Income", value: null },
 ];
 

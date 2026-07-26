@@ -34,7 +34,7 @@ export const astrologicalDetails: Field[] = [
 ];
 
 export const professionalDetails: Field[] = [
-  { label: "Current Role", value: "Business Analyst, Namshi (E-Commerce), Dubai" },
+  { label: "Current Role", value: "Strategy Analyst, Namshi (E-Commerce), Dubai" },
   { label: "Annual Income", value: null },
 ];
 

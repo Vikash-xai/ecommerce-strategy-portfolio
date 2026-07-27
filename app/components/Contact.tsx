@@ -7,11 +7,11 @@ export default function Contact() {
     <section id="contact" className="mx-auto max-w-5xl px-6 py-16">
       <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-lime-400/10 via-white/[0.04] to-transparent p-10 text-center backdrop-blur-xl sm:p-16">
         <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          Let&apos;s build something great
+          Say hello
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-base leading-7 text-slate-300">
-          Open to new opportunities in retail and e-commerce analytics. Reach
-          out and let&apos;s talk about how data can drive your next win.
+          Got a comment, a correction, or just want to talk shop? Drop me a
+          line.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

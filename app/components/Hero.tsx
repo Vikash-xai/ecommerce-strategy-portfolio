@@ -8,10 +8,9 @@ export default function Hero() {
     <section id="top" className="mx-auto max-w-5xl px-6 pt-20 pb-16 sm:pt-28">
       <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-medium text-slate-300">
         <span className="relative flex h-2 w-2">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime-400 opacity-75" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-lime-400" />
         </span>
-        Open to new opportunities
+        A personal blog
       </div>
 
       <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-white sm:text-6xl">
@@ -30,18 +29,18 @@ export default function Hero() {
       </p>
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <a
-          href="#contact"
+        <Link
+          href="/articles"
           className="flex items-center gap-2 rounded-full bg-lime-400 px-5 py-3 text-sm font-semibold text-[#060d1f] shadow-lg shadow-lime-400/20 transition-shadow hover:shadow-lime-400/40"
         >
-          Get in touch
+          Read the blog
           <ArrowRight className="h-4 w-4" />
-        </a>
+        </Link>
         <Link
-          href="/contents"
+          href="/about"
           className="flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-medium text-slate-200 transition-colors hover:bg-white/5"
         >
-          View experience
+          About me
         </Link>
       </div>
 

@@ -12,9 +12,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Vikash Kumar | E-commerce Strategy Analyst",
+  title: "Vikash Kumar",
   description:
-    "Portfolio of Vikash Kumar, an E-commerce Strategy Analyst specializing in growth strategy, marketplace optimization, and data-driven decision making.",
+    "Personal blog by Vikash Kumar — writing on e-commerce, data, and whatever else comes up.",
 };
 
 export default function RootLayout({

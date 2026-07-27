@@ -1,25 +1,25 @@
-import { ArrowRight, FileText, Image as ImageIcon, Newspaper, Paintbrush } from "lucide-react";
+import { ArrowRight, Image as ImageIcon, Newspaper, Paintbrush, User } from "lucide-react";
 import Link from "next/link";
 import SectionHeading from "./SectionHeading";
 
 const tiles = [
   {
-    href: "/contents",
-    icon: FileText,
-    title: "Contents",
-    description: "Full experience, skills, projects, and education.",
+    href: "/articles",
+    icon: Newspaper,
+    title: "Articles",
+    description: "Writing on e-commerce, data, and whatever else comes up.",
+  },
+  {
+    href: "/about",
+    icon: User,
+    title: "About",
+    description: "A little about who I am.",
   },
   {
     href: "/pictures",
     icon: ImageIcon,
     title: "Pictures",
-    description: "A visual look at the work and moments behind it.",
-  },
-  {
-    href: "/articles",
-    icon: Newspaper,
-    title: "Articles",
-    description: "Writing on retail analytics and e-commerce strategy.",
+    description: "A visual look at the moments behind the writing.",
   },
   {
     href: "/visualizer",

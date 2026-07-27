@@ -1,35 +1,29 @@
 import type { Metadata } from "next";
 import { auth, signOut } from "@/auth";
 import AdminGate from "../AdminGate";
-import {
-  aboutMe,
-  astrologicalDetails,
-  familyDetails,
-  personalDetails,
-  professionalDetails,
-} from "../../biodata/biodataData";
-import EditBiodataForm from "./EditBiodataForm";
+import { articles } from "../../articles/articlesData";
+import ArticlesManager from "./ArticlesManager";
 
 export const metadata: Metadata = {
-  title: "Edit Biodata | Admin",
+  title: "Edit Articles | Admin",
   robots: { index: false, follow: false },
 };
 
-export default async function AdminBiodataPage() {
+export default async function AdminArticlesPage() {
   const session = await auth();
 
   return (
-    <AdminGate redirectTo="/admin/biodata">
+    <AdminGate redirectTo="/admin/articles">
       <div className="mx-auto max-w-3xl px-6 py-16">
         <div className="mb-10 flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-semibold text-white">Edit Biodata</h1>
+            <h1 className="text-2xl font-semibold text-white">Edit Articles</h1>
             <p className="text-sm text-slate-400">Signed in as {session?.user?.email}</p>
           </div>
           <form
             action={async () => {
               "use server";
-              await signOut({ redirectTo: "/biodata" });
+              await signOut({ redirectTo: "/articles" });
             }}
           >
             <button
@@ -41,13 +35,7 @@ export default async function AdminBiodataPage() {
           </form>
         </div>
 
-        <EditBiodataForm
-          personalDetails={personalDetails}
-          familyDetails={familyDetails}
-          astrologicalDetails={astrologicalDetails}
-          professionalDetails={professionalDetails}
-          aboutMe={aboutMe}
-        />
+        <ArticlesManager initialArticles={articles} />
       </div>
     </AdminGate>
   );

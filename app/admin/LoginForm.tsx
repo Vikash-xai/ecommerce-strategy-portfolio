@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 import { login, type LoginResult } from "./actions";
 
-export default function LoginForm() {
+export default function LoginForm({ redirectTo }: { redirectTo: string }) {
   const [state, formAction, pending] = useActionState<LoginResult | null, FormData>(
     login,
     null
@@ -11,6 +11,7 @@ export default function LoginForm() {
 
   return (
     <form action={formAction} className="flex flex-col items-center gap-4">
+      <input type="hidden" name="redirectTo" value={redirectTo} />
       <input
         type="password"
         name="password"
